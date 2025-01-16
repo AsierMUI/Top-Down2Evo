@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PruebaMovimiento : MonoBehaviour
 {
 
-    //Hacer apuntes de todo
-    //preguntar a Jorge
+   
     public float moveSpeed = 5f;
 
     private Rigidbody2D rb;
+    private PlayerInput playerInput;
     private Vector2 movement;
 
 
@@ -17,16 +18,20 @@ public class PruebaMovimiento : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
 
     void Update()
     {
-
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
     }
+
+    #region Input Methods
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        movement = context.ReadValue<Vector2>();
+    }
+
+    #endregion
 }
