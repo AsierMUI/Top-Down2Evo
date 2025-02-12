@@ -1,49 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public float totalTime = 120f;
     public Text timerText;
-    private float timeElapsed;
-    private bool isTimerRunning;
-
 
     void Start()
     {
-        timeElapsed = 0f;
-        isTimerRunning = true; //inicia el temporizador desde 0
+        StartCoroutine(StartCountdown());
     }
 
-    void Update()
+    IEnumerator StartCountdown()
     {
-        if (isTimerRunning)
+        float timeLeft = totalTime;
+
+        while (timeLeft > 0)
         {
-            timeElapsed += Time.deltaTime; //va sumando el tiempo
-            DisplayTime(timeElapsed);
+            timerText.text = "Tiempo Restante: " + Mathf.Ceil(timeLeft).ToString();
+            yield return new WaitForSeconds(1f);
+            timeLeft--;
         }
+
+        timerText.text = "¡Se ha acabado el tiempo!";
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Muerte");
     }
-
-    void DisplayTime(float timeToDisplay)
-    {
-        //sirve para convertir el tiempo a minutos y segundos
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); //el formato son minutos:segundos
-    }
-
-    //llamarlos para controlar el tempporizador
-
-    public void StopTimer()
-    {
-        isTimerRunning = false; //Para el temporizador
-    }
-
-    public void ResetTimer()
-    {
-        timeElapsed = 0f; //Reinicia el temporizador a 0
-        isTimerRunning = true; 
-    }
-
 }
