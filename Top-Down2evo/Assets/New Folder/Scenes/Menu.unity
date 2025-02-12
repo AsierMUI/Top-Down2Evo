@@ -1310,8 +1310,8 @@ MonoBehaviour:
     E: Interactuar
 
 
-    MB IZQ/ ALT
-    DER: Atacar '
+    ALT DER:
+    Atacar '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
   m_sharedMaterial: {fileID: -1132304386783252067, guid: 1470f841c42567d4994f2754f08fab23, type: 2}

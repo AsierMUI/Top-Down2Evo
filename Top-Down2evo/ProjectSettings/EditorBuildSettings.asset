@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/New Folder/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/New Folder/Scenes/Menu.unity
+    guid: 81fabe958edf05046a508cbb18491500
+  - enabled: 1
+    path: Assets/New Folder/Scenes/Mapa1.unity
+    guid: 1945f31379699244298374433e19d928
+  - enabled: 1
+    path: Assets/New Folder/Scenes/Mapa2.unity
+    guid: deb397e5c4bb85949a26c6db0dc8db1d
+  - enabled: 1
+    path: Assets/New Folder/Scenes/Ganar-Siquiente.unity
+    guid: 2b6b4b59ebb6cca469b6b8a2ef9fa6a6
+  - enabled: 1
+    path: Assets/New Folder/Scenes/Ganar.unity
+    guid: 730bed1def50bc84c861b78aa5f8e0b6
+  - enabled: 1
+    path: Assets/New Folder/Scenes/Muerte.unity
+    guid: 412d15311e7d28f47a6645bc0257dcfa
   m_configObjects: {}
