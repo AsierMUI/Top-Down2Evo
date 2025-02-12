@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
-        enemyCount = FindObjectsOfType().Length;
+        //enemyCount = FindObjectsOfType().Length;
     }
     void Update()
     {

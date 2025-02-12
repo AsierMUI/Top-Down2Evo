@@ -3661,7 +3661,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625200996}
-  - component: {fileID: 625200997}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -3684,18 +3683,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1856074632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &625200997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625200995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b300b81c15cfcbf43b53741d5e7054fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &654242914
 GameObject:
   m_ObjectHideFlags: 0
@@ -54680,6 +54667,7 @@ GameObject:
   - component: {fileID: 1334621315}
   - component: {fileID: 1334621314}
   - component: {fileID: 1334621313}
+  - component: {fileID: 1334621318}
   m_Layer: 0
   m_Name: orco
   m_TagString: Enemy
@@ -54847,6 +54835,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1334621318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334621312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfd0ea64112c7647940e02bd7c33d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  detectionRange: 5
+--- !u!4 &1383574982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2930332407283583137, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
+  m_PrefabInstance: {fileID: 1731698232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421300854
 GameObject:
   m_ObjectHideFlags: 0
@@ -83856,8 +83863,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1677098030886570805, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
+      propertyPath: Sword
+      value: 
+      objectReference: {fileID: 1383574982}
+    - target: {fileID: 1677098030886570805, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
       propertyPath: moveSpeed
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930332407283583137, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52
       objectReference: {fileID: 0}
     - target: {fileID: 5528304901993611396, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -83898,6 +83913,10 @@ PrefabInstance:
     - target: {fileID: 5528304901993611396, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734265759728392831, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
+      propertyPath: m_Name
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 7295301464438215523, guid: 43c4541295f46be4694f2b4374796b74, type: 3}
       propertyPath: m_Name

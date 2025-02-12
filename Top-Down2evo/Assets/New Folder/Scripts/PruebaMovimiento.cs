@@ -15,8 +15,12 @@ public class PruebaMovimiento : MonoBehaviour
     private float movimientoX;
     private float movimientoY;
     private Animator animator;
+    private Vector2 ultimaDireccion;
+
 
     bool isAttacking = false;
+    public Transform Sword;
+    bool isWalking = false;
 
 
 
@@ -28,6 +32,14 @@ public class PruebaMovimiento : MonoBehaviour
     }
 
 
+    private void FixedUpdate()
+    {
+        if(isWalking)
+            {
+            Vector3 vector3 = Vector3.left * movimientoX + Vector3.down * movimientoY;
+            Sword.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
+        }
+    }
     void Update()
     {
 
@@ -41,7 +53,6 @@ public class PruebaMovimiento : MonoBehaviour
         }
 
         Movimiento();
-
 
 
     }
@@ -59,6 +70,8 @@ public class PruebaMovimiento : MonoBehaviour
         //animacion movimiento
         if (isAttacking) return;
 
+        
+
         movimientoX = Input.GetAxisRaw("Horizontal");
         movimientoY = Input.GetAxisRaw("Vertical");
 
@@ -67,8 +80,17 @@ public class PruebaMovimiento : MonoBehaviour
 
         if (movimientoX != 0 || movimientoY != 0)
         {
+            isWalking = false;
+            
+            ultimaDireccion = movement;
             animator.SetFloat("UltimoX", movimientoX);
             animator.SetFloat("UltimoY", movimientoY);
+            Vector3 vector3 = Vector3.left * ultimaDireccion.x + Vector3.down * ultimaDireccion.y;
+            Sword.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
+        }
+        else if (movimientoX != 0 || movimientoY != 0)
+        {
+            isWalking = true;
         }
     }
 
