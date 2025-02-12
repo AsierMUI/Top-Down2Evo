@@ -30,6 +30,7 @@ public class PruebaMovimiento : MonoBehaviour
 
     void Update()
     {
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         //ataque
