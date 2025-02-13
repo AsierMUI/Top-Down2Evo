@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
+public class PlayerInteractions : MonoBehaviour
+{
+    public TMP_Text pointsText;
+    public int points;
+    public int winPoints;
+    public SceneChanger sceneManagerScript;
+    public int sceneToLoad;
+    public GameObject goal;
+
+
+
+    private void Start()
+    {
+        UpdateScoreText();
+    }
+    private void Update()
+    {
+        if(points < 0) { points = 0; }
+        if(points >= winPoints) {goal.SetActive(true);}
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PickUp"))
+        {
+            points += 1;
+            UpdateScoreText();
+            collision.gameObject.SetActive(false);
+        }
+
+        if(collision.CompareTag("Finish"))
+            {
+            WinCall();
+            }
+
+
+        if (collision.CompareTag("Trap"))
+        {
+            sceneManagerScript.SceneLoader(sceneToLoad);
+        }
+    }
+
+    private void UpdateScoreText()
+    {
+        pointsText.text = "Tesoros: " + points.ToString() + "/" + winPoints.ToString();
+    }
+
+    private void WinCall()
+    {
+        sceneManagerScript.SceneLoader(sceneToLoad);
+    }
+}

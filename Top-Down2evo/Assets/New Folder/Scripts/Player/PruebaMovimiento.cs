@@ -85,7 +85,6 @@ public class PruebaMovimiento : MonoBehaviour
             animator.SetFloat("UltimoX", movimientoX);
             animator.SetFloat("UltimoY", movimientoY);
             Vector3 vector3 = Vector3.left * ultimaDireccion.x + Vector3.down * ultimaDireccion.y;
-            Sword.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
         }
         else if (movimientoX != 0 || movimientoY != 0)
         {
