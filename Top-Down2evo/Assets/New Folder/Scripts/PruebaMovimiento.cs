@@ -48,8 +48,7 @@ public class PruebaMovimiento : MonoBehaviour
         //ataque
         if (Input.GetKeyDown(KeyCode.RightAlt))
             {
-            animator.Play("Ataque");
-            isAttacking = true;
+            animator.SetTrigger("Attacking");
         }
 
         Movimiento();
