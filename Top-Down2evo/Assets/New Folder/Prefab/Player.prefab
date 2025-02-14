@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4104087011335096252}
   - component: {fileID: 1677098030886570805}
   - component: {fileID: 5973077970576364467}
-  - component: {fileID: -2493175829244791705}
+  - component: {fileID: 6400731370394498297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -197,8 +197,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &-2493175829244791705
-PolygonCollider2D:
+--- !u!61 &6400731370394498297
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -229,7 +229,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0027234256, y: -0.0108934045}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -239,20 +239,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.5047955, y: 0.57499987}
-      - {x: -0.50496817, y: 0.5779792}
-      - {x: -0.5052951, y: 0.0066202395}
-      - {x: -0.5773892, y: 0.005374588}
-      - {x: -0.5762037, y: -0.15180619}
-      - {x: -0.50165653, y: -0.36362955}
-      - {x: -0.4192362, y: -0.44766882}
-      - {x: -0.2550947, y: -0.5780503}
-      - {x: 0.05282189, y: -0.57952607}
-      - {x: 0.27473065, y: -0.57478267}
-      - {x: 0.50226474, y: -0.36248353}
-      - {x: 0.57484156, y: -0.15850525}
-      - {x: 0.5751537, y: 0.0047493577}
-      - {x: 0.50694263, y: 0.006245069}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0601971, y: 1.1527914}
+  m_EdgeRadius: 0

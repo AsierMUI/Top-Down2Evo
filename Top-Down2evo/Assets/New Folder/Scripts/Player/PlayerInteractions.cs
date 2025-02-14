@@ -15,16 +15,25 @@ public class PlayerInteractions : MonoBehaviour
     public int sceneToLoad;
     public GameObject goal;
 
+    public Canvas canvas;
+
 
 
     private void Start()
     {
         UpdateScoreText();
+        canvas = GameObject.Find("CanvasSalida").GetComponent<Canvas>();
     }
     private void Update()
     {
         if(points < 0) { points = 0; }
-        if(points >= winPoints) {goal.SetActive(true);}
+        if(points >= winPoints)
+        {
+            goal.SetActive(true);
+            canvas.gameObject.SetActive(true);
+            StartCoroutine(DisableCanvasAfterTime(5f));
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,4 +66,10 @@ public class PlayerInteractions : MonoBehaviour
     {
         sceneManagerScript.SceneLoader(sceneToLoad);
     }
+    private IEnumerator DisableCanvasAfterTime(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        canvas.gameObject.SetActive(false);
+    }
+
 }
