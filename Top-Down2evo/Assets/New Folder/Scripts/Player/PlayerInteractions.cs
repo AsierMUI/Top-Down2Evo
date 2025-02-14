@@ -44,7 +44,7 @@ public class PlayerInteractions : MonoBehaviour
 
         if (collision.CompareTag("Trap"))
         {
-            sceneManagerScript.SceneLoader(sceneToLoad);
+            sceneManagerScript.SceneLoader(3);
         }
     }
 
