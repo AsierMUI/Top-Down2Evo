@@ -15,6 +15,7 @@ public class PlayerInteractions : MonoBehaviour
     public int sceneToLoad;
     public GameObject goal;
 
+    private bool isCanvasActive = false;
     public Canvas canvas;
 
 
@@ -23,15 +24,15 @@ public class PlayerInteractions : MonoBehaviour
     {
         UpdateScoreText();
         canvas = GameObject.Find("CanvasSalida").GetComponent<Canvas>();
+        canvas.gameObject.SetActive(false);
     }
     private void Update()
     {
-        if(points < 0) { points = 0; }
-        if(points >= winPoints)
+        if (points < 0) { points = 0; }
+        if (points >= winPoints)
         {
             goal.SetActive(true);
-            canvas.gameObject.SetActive(true);
-            StartCoroutine(DisableCanvasAfterTime(5f));
+            ActivateCanvas();
         }
 
     }
@@ -45,10 +46,10 @@ public class PlayerInteractions : MonoBehaviour
             collision.gameObject.SetActive(false);
         }
 
-        if(collision.CompareTag("Finish"))
-            {
+        if (collision.CompareTag("Finish"))
+        {
             WinCall();
-            }
+        }
 
 
         if (collision.CompareTag("Trap"))
@@ -66,10 +67,22 @@ public class PlayerInteractions : MonoBehaviour
     {
         sceneManagerScript.SceneLoader(sceneToLoad);
     }
-    private IEnumerator DisableCanvasAfterTime(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        canvas.gameObject.SetActive(false);
-    }
 
+    private void ActivateCanvas()
+    {
+        if (!isCanvasActive)
+        {
+            isCanvasActive = true;
+            canvas.gameObject.SetActive(true);
+            StartCoroutine(DestroyCanvasAfterTime(5f));
+        }
+    }
+        private IEnumerator DestroyCanvasAfterTime(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+        Destroy(canvas.gameObject);
+            isCanvasActive = false;
+        }
+
+  
 }
