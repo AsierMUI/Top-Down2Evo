@@ -60,7 +60,7 @@ public class PlayerInteractions : MonoBehaviour
 
     private void UpdateScoreText()
     {
-        pointsText.text = "Tesoros: " + points.ToString() + "/" + winPoints.ToString();
+        pointsText.text = "Relics: " + points.ToString() + "/" + winPoints.ToString();
     }
 
     private void WinCall()

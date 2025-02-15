@@ -406,7 +406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volver al menu
+  m_text: Back to menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
   m_sharedMaterial: {fileID: -1132304386783252067, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Has logrado escapar de la mazmorra... o no?
+  m_text: "You managed to escape from the dungeon... or not?\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
   m_sharedMaterial: {fileID: -1132304386783252067, guid: 1470f841c42567d4994f2754f08fab23, type: 2}

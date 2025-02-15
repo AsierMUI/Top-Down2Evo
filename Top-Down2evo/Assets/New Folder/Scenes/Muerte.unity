@@ -764,7 +764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reintentar?
+  m_text: Retry?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
   m_sharedMaterial: {fileID: -1132304386783252067, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
@@ -791,8 +791,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.3
-  m_fontSizeBase: 32.3
+  m_fontSize: 44.43
+  m_fontSizeBase: 44.43
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volver al menu
+  m_text: Back to menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
   m_sharedMaterial: {fileID: -1132304386783252067, guid: 1470f841c42567d4994f2754f08fab23, type: 2}
@@ -1403,8 +1403,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.7
-  m_fontSizeBase: 26.7
+  m_fontSize: 28.8
+  m_fontSizeBase: 28.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
